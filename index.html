@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliment Machine</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>The Compliment Machine</h1>
+      <p class="subtitle">Because you deserve to hear it</p>
+    </header>
+
+    <div class="controls">
+      <div class="mode-selector">
+        <label for="mode">Mode</label>
+        <select id="mode">
+          <option value="sweet">Sweet</option>
+          <option value="dramatic">Overly Dramatic</option>
+          <option value="shakespeare">Shakespeare</option>
+          <option value="roast">Roast but Loving</option>
+          <option value="luxury">Delusional Luxury</option>
+          <option value="chaos">Random Chaos</option>
+        </select>
+      </div>
+
+      <div class="name-input">
+        <label for="name">Name <span class="optional">(optional)</span></label>
+        <input type="text" id="name" placeholder="e.g. Aisha">
+      </div>
+    </div>
+
+    <button id="generate" class="generate-btn">Generate Compliment</button>
+
+    <div id="output-card" class="output-card hidden">
+      <p id="compliment-text" class="compliment-text"></p>
+      <div class="card-actions">
+        <button id="copy-btn" class="action-btn" title="Copy">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="copy-label">Copy</span>
+        </button>
+        <button id="fav-btn" class="action-btn" title="Save to favourites">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Save</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="favourites-section" class="favourites-section hidden">
+      <h2>Favourites</h2>
+      <ul id="favourites-list" class="favourites-list"></ul>
+      <button id="clear-favs" class="clear-favs-btn">Clear All</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">Copied!</div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
